@@ -56,20 +56,19 @@ import React from "react";
 
 import PostsPage from "./Posts.js";
 import Header from "./MainNavigation.js";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Footer from "./Footer.js";
 import ProfilePage from "../pages/Profile.js";
-
 
 const HomePage = () => {
   return (
     <>
-   <Header />
+      <Header />
 
       {/* <PostsPage /> */}
-      <Footer  />
+      <Footer />
 
-<Outlet />
+      <Outlet />
     </>
   );
 };
