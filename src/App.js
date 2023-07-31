@@ -9,9 +9,12 @@ import MyPostsPage from "./components/myPosts";
 import PostsPage from "./components/Posts";
 import ProfilePage from "./pages/Profile";
 // import PostsPage from './components/Posts'
+import {action as PostsAction} from './components/createPostsForm'
 import AuthenticationPage, {
   action as authAction,
 } from "./pages/Authentication";
+
+
 import { AuthContext } from "./context/auth-context";
 import CreatePosts from "./pages/CreatePosts";
 
@@ -50,6 +53,7 @@ const App = () => {
         {
           path: "createPosts",
           element: <CreatePosts />,
+          action:PostsAction
         },
       ],
     },

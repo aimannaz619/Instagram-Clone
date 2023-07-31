@@ -4,7 +4,7 @@ function CreatePosts() {
   return (
     <div>
       <h1>Create posts</h1>
-      <CreatePostsForm />
+      <CreatePostsForm method="post" />
     </div>
   );
 }
