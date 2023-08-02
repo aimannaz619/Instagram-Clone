@@ -13,7 +13,7 @@ function PostsList({posts}){
             <PostCard
 
               // username={post.username}
-              title={data.title}
+              caption={data.caption}
               imageUrl={data.photo}
              
             />

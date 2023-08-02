@@ -1,5 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { BsFillHouseDoorFill, BsSearch, BsPlusCircle } from "react-icons/bs";
+import CreatePostsForm from "./createPostsForm";
+import { Link, redirect } from "react-router-dom";
 
 function Footer() {
   return (
@@ -23,10 +25,10 @@ function Footer() {
           {/* Plus icon */}
           <Col xs="auto">
             <div className="footer-icon  rounded-circle d-flex justify-content-center align-items-center">
-             
-                {" "}
-                <BsPlusCircle size={30} />
-             
+              {" "}
+              <Link to="/createposts">
+                <BsPlusCircle size={30} style={{ color: "black" }} />
+              </Link>
             </div>
           </Col>
         </Row>
