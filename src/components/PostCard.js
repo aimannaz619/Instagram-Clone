@@ -5,7 +5,7 @@ const PostCard = ({  caption , imageUrl }) => {
     <div className="card mb-4">
           <h5 className="card-title">{caption}</h5>
       {/* Post Image */}
-      <img src="https://static.vecteezy.com/system/resources/thumbnails/002/097/702/small/3d-illustration-of-grass-and-trees-with-view-of-cloudy-skies-free-photo.jpg" className="card-img-top" alt="Post" />
+      <img src={imageUrl} className="card-img-top" alt="Post" />
 
       {/* Card Body */}
       <div className="card-body">

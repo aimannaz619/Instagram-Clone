@@ -53,7 +53,7 @@ const App = () => {
         {
           path: "createPosts",
           element: <CreatePosts />,
-          action:PostsAction
+          // action:PostsAction
         },
       ],
     },

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Button } from "react-bootstrap";
 import "./ImageUpload.css";
 
-const ImageUpload = (props) => {
+const ImageUpload = ({onImageSelect}) => {
   const filePickerRef = useRef();
 
   const [file, setFile] = useState();
@@ -35,14 +35,14 @@ const ImageUpload = (props) => {
       setIsValid(false);
       fileIsValid = false;
     }
-    // props.onInput(props.id, pickedFile, fileIsValid);
+    onImageSelect(pickedFile);
   };
 
   return (
     <>
       <div className="mb-3 mt-3">
         <input
-          id={props.id}
+          // id={props.id}
           type="file"
           name="image"
           ref={filePickerRef}
@@ -51,7 +51,7 @@ const ImageUpload = (props) => {
           onChange={pickedHandler}
         ></input>
       </div>
-      <div className={`image-upload ${props.center && "center"}`}>
+      <div className={`image-upload ${ "center"}`}>
         <div className="image-upload__preview ">
           {previewUrl && <img src={previewUrl} alt="preview" />}
         </div>
