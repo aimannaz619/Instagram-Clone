@@ -1,11 +1,14 @@
 import React from "react";
 
 const PostCard = ({  caption , imageUrl }) => {
+  console.log(imageUrl)
   return (
     <div className="card mb-4">
           <h5 className="card-title">{caption}</h5>
+        
+         
       {/* Post Image */}
-      <img src={imageUrl} className="card-img-top" alt="Post" />
+      <img src={`http://localhost:3000/${imageUrl}`} className="card-img-top" alt="Post" />
 
       {/* Card Body */}
       <div className="card-body">

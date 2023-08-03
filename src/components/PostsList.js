@@ -10,11 +10,12 @@ function PostsList({posts}){
         {posts.map((data) => (
           
           <div className="col-md-4" key={data._id}>
+            
             <PostCard
 
               // username={post.username}
               caption={data.caption}
-              imageUrl={data.photo}
+              imageUrl={data.imageUrl}
              
             />
       
