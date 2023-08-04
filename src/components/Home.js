@@ -65,7 +65,7 @@ const HomePage = () => {
     <>
       <Header />
 
-      {/* <PostsPage /> */}
+      <PostsPage />
       <Footer />
 
       <Outlet />

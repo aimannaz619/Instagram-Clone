@@ -8,11 +8,13 @@ import HomePage from "./components/Home";
 import MyPostsPage from "./components/myPosts";
 import PostsPage from "./components/Posts";
 import ProfilePage from "./pages/Profile";
-// import PostsPage from './components/Posts'
-import {action as PostsAction} from './components/createPostsForm'
+import ErrorPage from "./pages/ErrorPage";
 import AuthenticationPage, {
   action as authAction,
 } from "./pages/Authentication";
+
+// import PostsPage from './components/Posts'
+import {action as PostsAction} from './components/createPostsForm'
 
 
 import { AuthContext } from "./context/auth-context";
@@ -34,11 +36,12 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
+      errorElement:<ErrorPage />,
       children: [
         { index: true, element: <HomePage /> },
         {
-          path: "posts",
-          element: <PostsPage />,
+          // path: "posts",
+          // element: <PostsPage />,
         },
         {
           path: "profile",

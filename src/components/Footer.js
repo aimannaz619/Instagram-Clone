@@ -11,7 +11,7 @@ function Footer() {
           {/* Home icon */}
           <Col xs="auto">
             <div className="footer-icon  d-flex justify-content-center align-items-center">
-              <BsFillHouseDoorFill size={30} />
+             <Link to="/"> <BsFillHouseDoorFill size={30} style={{ color: "black" }} /></Link>
             </div>
           </Col>
 

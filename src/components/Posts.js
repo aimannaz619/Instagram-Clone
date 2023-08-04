@@ -23,6 +23,7 @@ function PostsPage() {
 
     fetchData();
   }, []);
+  console.log("data is "+data)
   
 
   return (
