@@ -1,20 +1,25 @@
 import PostCard from "./PostCard.js";
-function PostsList({ posts }) {
+
+function PostsList({ posts , showButtons }) {
+ 
   return (
     <div className="container mt-4">
-      <div className="col justify-content-center">
-        {console.log("my posts are " + posts)}
+
+     
         {posts.map((data) => (
-          <div className="col-8" key={data._id}>
+          <div key={data._id}>
             <PostCard
               // username={post.username}
               caption={data.caption}
               imageUrl={data.imageUrl}
+              showButtons={showButtons}
+              id={data._id}
             />
+        
           </div>
         ))}
       </div>
-    </div>
+ 
   );
 }
 export default PostsList;

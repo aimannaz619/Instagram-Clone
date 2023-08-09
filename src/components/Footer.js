@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { BsFillHouseDoorFill, BsSearch, BsPlusCircle } from "react-icons/bs";
-import CreatePostsForm from "./createPostsForm";
+import CreatePostsForm from "./PostsForm";
 import { Link, redirect } from "react-router-dom";
 
 function Footer() {

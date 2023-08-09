@@ -1,10 +1,11 @@
-import CreatePostsForm from "../components/createPostsForm";
+import PostsForm from "../components/PostsForm";
+
 
 function CreatePosts() {
   return (
     <div>
       <h1>Create posts</h1>
-      <CreatePostsForm method="post" />
+      <PostsForm method="post" />
     </div>
   );
 }
