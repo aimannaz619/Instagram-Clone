@@ -8,15 +8,17 @@ import HomePage from "./components/Home";
 import MyPostsPage from "./components/myPosts";
 import PostsPage from "./components/Posts";
 import ProfilePage from "./pages/Profile";
-// import PostsPage from './components/Posts'
-import {action as PostsAction} from './components/createPostsForm'
+import ErrorPage from "./pages/ErrorPage";
 import AuthenticationPage, {
   action as authAction,
 } from "./pages/Authentication";
 
+// import PostsPage from './components/Posts'
+import { action as PostsAction } from "./components/PostsForm";
 
 import { AuthContext } from "./context/auth-context";
 import CreatePosts from "./pages/CreatePosts";
+import EditPost from "./components/EditPost";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -34,17 +36,45 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
+      errorElement: <ErrorPage />,
       children: [
-        { index: true, element: <HomePage /> },
         {
-          path: "posts",
-          element: <PostsPage />,
+          index: true,
+          element: <HomePage />,
         },
+
         {
           path: "profile",
           element: <ProfilePage />,
         },
-        { path: "myposts", element: <MyPostsPage /> },
+        {
+          path: "myposts",
+          children: [
+            {
+              index: true,
+              element: <MyPostsPage />,
+            },
+            {
+              path: ":id/edit",
+              element: <EditPost />,
+            },
+          ],
+        },
+        // {
+        //   path: "myposts",
+        //   element: <MyPostsPage />,
+
+        //   //   children: [
+        //   //     {
+        //   //       path: ":id/edit",
+        //   //       element: <EditPost />,
+        //   //     },
+        //   //   ],
+        // },
+        // {
+        //   path: "myposts/:id/edit",
+        //   element: <EditPost />,
+        // },
         {
           path: "auth",
           element: <AuthenticationPage />,

@@ -8,13 +8,18 @@ import {
   redirect,
   useNavigation,
 } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { getAuthToken } from "../util/auth";
 
 import "bootstrap/dist/css/bootstrap.css";
 import ImageUpload from "./FormElements/ImageUpload";
 
-function CreatePostsForm() {
+function PostsForm({ method }) {
+  
+  const postId = useParams;
+  console.log("postId is " + postId)
+
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
 
@@ -44,7 +49,14 @@ function CreatePostsForm() {
       console.log("selected image is " + selectedImage);
     }
 
+
+    //sending request to backend
     let url = "http://localhost:3000/createpost";
+
+    if (method === 'PATCH') {
+      const postId = useParams;
+      url = "http://localhost:3000/createpost" + postId;
+    }
 
     const token = getAuthToken();
     console.log(token);
@@ -61,14 +73,14 @@ function CreatePostsForm() {
     if (response.status === 422) {
       return response;
     }
-    if(response.status === 400){
+    if (response.status === 400) {
       return response;
     }
 
     if (!response.ok) {
       throw json({ message: "Could not save event." }, { status: 500 });
     }
-    return redirect("/posts");
+    return redirect("/");
   };
 
   return (
@@ -100,4 +112,4 @@ function CreatePostsForm() {
   );
 }
 
-export default CreatePostsForm;
+export default PostsForm;
